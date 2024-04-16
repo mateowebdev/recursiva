@@ -11,4 +11,4 @@ En el directorio raíz podemos lanzar el servidor localmente. Corre en el puerto
 npm run start
 ```
 ## Visualización de los resultados
- Una vez lanzado el servidor, los resultados se podrán observar en el navegador de manera muy sencilla, un html plano. A su vez el proyecto cuenta con endpoints dinámicos que entregan JSON para poder ser consumidos por un frontend. En el siguiente [enlace](https://recursiva-front.netlify.app/) se puede testear un pequeño front que consume esa info del localhost.
+ Una vez lanzado el servidor, los resultados se podrán observar en el navegador de manera muy sencilla, un html plano en http://localhost:3000/. A su vez el proyecto cuenta con endpoints dinámicos que entregan JSON para poder ser consumidos por un frontend. En el siguiente [enlace](https://recursiva-front.netlify.app/) se puede testear un pequeño front que consume esa info del localhost.
