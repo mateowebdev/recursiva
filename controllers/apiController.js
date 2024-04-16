@@ -15,10 +15,12 @@ const getTotalSocios = (req, res) => {
 const getPromedioEdadEquipo = (req, res) => {
   const { equipo } = req.query;
   const service = new Service();
+  let result;
   if (!equipo) {
-    res.status(400).json({ data: "No team" });
+    result = "No team";
+  } else {
+    result = service.getPromedioEdadPorEquipo(equipo);
   }
-  const result = service.getPromedioEdadPorEquipo(equipo);
   res.status(200).json({ data: result });
 };
 
@@ -26,18 +28,18 @@ const getCasadosUniversitarios = (req, res) => {
   const { limit } = req.query;
   const service = new Service();
 
-  if (limit<1 || limit > 200) {
-    res.status(400).json({ data: "Invalid limit. (1 - 200)" });
+  let result;
+  if (limit < 1 || limit > 200) {
+    result = "Invalid limit. (1 - 200)";
+  } else {
+    result = service.getCasadosConEstudios(limit);
   }
-  console.log("queeeeeeee");
-  const result = service.getCasadosConEstudios(limit);
   res.status(200).json({ data: result });
 };
-
 
 module.exports = {
   getTotalSocios,
   getPromedioEdadEquipo,
   getCasadosUniversitarios,
-  getEquipos
+  getEquipos,
 };
